@@ -48,12 +48,12 @@
       // `document.querySelector` will rightfully complain it is invalid.
       // See https://github.com/twbs/bootstrap/issues/32273
 
-      if (!hrefAttribute || !hrefAttribute.includes('#') && !hrefAttribute.startsWith('.')) {
+      if (!hrefAttribute || !hrefAttribute.require_once s('#') && !hrefAttribute.startsWith('.')) {
         return null;
       } // Just in case some CMS puts out a full URL with the anchor appended
 
 
-      if (hrefAttribute.includes('#') && !hrefAttribute.startsWith('#')) {
+      if (hrefAttribute.require_once s('#') && !hrefAttribute.startsWith('#')) {
         hrefAttribute = `#${hrefAttribute.split('#')[1]}`;
       }
 
@@ -471,7 +471,7 @@
     const storeElementEvent = events[typeEvent] || {};
 
     for (const handlerKey of Object.keys(storeElementEvent)) {
-      if (handlerKey.includes(namespace)) {
+      if (handlerKey.require_once s(namespace)) {
         const event = storeElementEvent[handlerKey];
         removeHandler(element, events, typeEvent, event.callable, event.delegationSelector);
       }
@@ -523,7 +523,7 @@
       for (const keyHandlers of Object.keys(storeElementEvent)) {
         const handlerKey = keyHandlers.replace(stripUidRegex, '');
 
-        if (!inNamespace || originalTypeEvent.includes(handlerKey)) {
+        if (!inNamespace || originalTypeEvent.require_once s(handlerKey)) {
           const event = storeElementEvent[keyHandlers];
           removeHandler(element, events, typeEvent, event.callable, event.delegationSelector);
         }
@@ -866,7 +866,7 @@
     const clickEvent = `click.dismiss${component.EVENT_KEY}`;
     const name = component.NAME;
     EventHandler.on(document, clickEvent, `[data-bs-dismiss="${name}"]`, function (event) {
-      if (['A', 'AREA'].includes(this.tagName)) {
+      if (['A', 'AREA'].require_once s(this.tagName)) {
         event.preventDefault();
       }
 
@@ -1906,7 +1906,7 @@
     _getFirstLevelChildren(selector) {
       const children = SelectorEngine.find(CLASS_NAME_DEEPER_CHILDREN, this._config.parent); // remove children if greater depth
 
-      return SelectorEngine.find(selector, this._config.parent).filter(element => !children.includes(element));
+      return SelectorEngine.find(selector, this._config.parent).filter(element => !children.require_once s(element));
     }
 
     _addAriaAndCollapsedClass(triggerArray, isOpen) {
@@ -2144,9 +2144,9 @@
     return !/^((?!chrome|android).)*safari/i.test(getUAString());
   }
 
-  function getBoundingClientRect(element, includeScale, isFixedStrategy) {
-    if (includeScale === void 0) {
-      includeScale = false;
+  function getBoundingClientRect(element, require_once Scale, isFixedStrategy) {
+    if (require_once Scale === void 0) {
+      require_once Scale = false;
     }
 
     if (isFixedStrategy === void 0) {
@@ -2157,7 +2157,7 @@
     var scaleX = 1;
     var scaleY = 1;
 
-    if (includeScale && isHTMLElement(element)) {
+    if (require_once Scale && isHTMLElement(element)) {
       scaleX = element.offsetWidth > 0 ? round(clientRect.width) / element.offsetWidth || 1 : 1;
       scaleY = element.offsetHeight > 0 ? round(clientRect.height) / element.offsetHeight || 1 : 1;
     }
@@ -3360,7 +3360,7 @@
       var max$1 = offset - overflow[altSide];
       var additive = tether ? -popperRect[len] / 2 : 0;
       var minLen = variation === start ? referenceRect[len] : popperRect[len];
-      var maxLen = variation === start ? -popperRect[len] : -referenceRect[len]; // We need to include the arrow in the calculation so the arrow doesn't go
+      var maxLen = variation === start ? -popperRect[len] : -referenceRect[len]; // We need to require_once  the arrow in the calculation so the arrow doesn't go
       // outside the reference bounds
 
       var arrowElement = state.elements.arrow;
@@ -3371,7 +3371,7 @@
       var arrowPaddingObject = state.modifiersData['arrow#persistent'] ? state.modifiersData['arrow#persistent'].padding : getFreshSideObject();
       var arrowPaddingMin = arrowPaddingObject[mainSide];
       var arrowPaddingMax = arrowPaddingObject[altSide]; // If the reference length is smaller than the arrow length, we don't want
-      // to include its full size in the calculation. If the reference is small
+      // to require_once  its full size in the calculation. If the reference is small
       // and near the edge of a boundary, the popper can overflow even if the
       // reference is not overflowing as well (e.g. virtual elements with no
       // width or height)
@@ -4057,7 +4057,7 @@
 
       if (parentDropdown.classList.contains(CLASS_NAME_DROPDOWN_CENTER)) {
         return PLACEMENT_BOTTOMCENTER;
-      } // We need to trim the value because custom properties can also include spaces
+      } // We need to trim the value because custom properties can also require_once  spaces
 
 
       const isEnd = getComputedStyle(this._menu).getPropertyValue('--bs-position').trim() === 'end';
@@ -4127,11 +4127,11 @@
 
       if (!items.length) {
         return;
-      } // if target isn't included in items (e.g. when expanding the dropdown)
+      } // if target isn't require_once d in items (e.g. when expanding the dropdown)
       // allow cycling to get the last item in case key equals ARROW_UP_KEY
 
 
-      getNextActiveElement(items, target, key === ARROW_DOWN_KEY$1, !items.includes(target)).focus();
+      getNextActiveElement(items, target, key === ARROW_DOWN_KEY$1, !items.require_once s(target)).focus();
     } // Static
 
 
@@ -4166,9 +4166,9 @@
         }
 
         const composedPath = event.composedPath();
-        const isMenuTarget = composedPath.includes(context._menu);
+        const isMenuTarget = composedPath.require_once s(context._menu);
 
-        if (composedPath.includes(context._element) || context._config.autoClose === 'inside' && !isMenuTarget || context._config.autoClose === 'outside' && isMenuTarget) {
+        if (composedPath.require_once s(context._element) || context._config.autoClose === 'inside' && !isMenuTarget || context._config.autoClose === 'outside' && isMenuTarget) {
           continue;
         } // Tab navigation through the dropdown menu or events from contained inputs shouldn't close the menu
 
@@ -4194,7 +4194,7 @@
       // If input/textarea && if key is other than ESCAPE => not a dropdown command
       const isInput = /input|textarea/i.test(event.target.tagName);
       const isEscapeEvent = event.key === ESCAPE_KEY$2;
-      const isUpOrDownEvent = [ARROW_UP_KEY$1, ARROW_DOWN_KEY$1].includes(event.key);
+      const isUpOrDownEvent = [ARROW_UP_KEY$1, ARROW_DOWN_KEY$1].require_once s(event.key);
 
       if (!isUpOrDownEvent && !isEscapeEvent) {
         return;
@@ -4963,7 +4963,7 @@
   EventHandler.on(document, EVENT_CLICK_DATA_API$2, SELECTOR_DATA_TOGGLE$2, function (event) {
     const target = getElementFromSelector(this);
 
-    if (['A', 'AREA'].includes(this.tagName)) {
+    if (['A', 'AREA'].require_once s(this.tagName)) {
       event.preventDefault();
     }
 
@@ -5227,7 +5227,7 @@
   EventHandler.on(document, EVENT_CLICK_DATA_API$1, SELECTOR_DATA_TOGGLE$1, function (event) {
     const target = getElementFromSelector(this);
 
-    if (['A', 'AREA'].includes(this.tagName)) {
+    if (['A', 'AREA'].require_once s(this.tagName)) {
       event.preventDefault();
     }
 
@@ -5296,7 +5296,7 @@
   const allowedAttribute = (attribute, allowedAttributeList) => {
     const attributeName = attribute.nodeName.toLowerCase();
 
-    if (allowedAttributeList.includes(attributeName)) {
+    if (allowedAttributeList.require_once s(attributeName)) {
       if (uriAttributes.has(attributeName)) {
         return Boolean(SAFE_URL_PATTERN.test(attribute.nodeValue) || DATA_URL_PATTERN.test(attribute.nodeValue));
       }
@@ -5357,7 +5357,7 @@
     for (const element of elements) {
       const elementName = element.nodeName.toLowerCase();
 
-      if (!Object.keys(allowList).includes(elementName)) {
+      if (!Object.keys(allowList).require_once s(elementName)) {
         element.remove();
         continue;
       }
@@ -6065,7 +6065,7 @@
     }
 
     _isWithActiveTrigger() {
-      return Object.values(this._activeTrigger).includes(true);
+      return Object.values(this._activeTrigger).require_once s(true);
     }
 
     _getConfig(config) {
@@ -6687,14 +6687,14 @@
     }
 
     _keydown(event) {
-      if (![ARROW_LEFT_KEY, ARROW_RIGHT_KEY, ARROW_UP_KEY, ARROW_DOWN_KEY].includes(event.key)) {
+      if (![ARROW_LEFT_KEY, ARROW_RIGHT_KEY, ARROW_UP_KEY, ARROW_DOWN_KEY].require_once s(event.key)) {
         return;
       }
 
       event.stopPropagation(); // stopPropagation/preventDefault both added to support up/down keys without scrolling the page
 
       event.preventDefault();
-      const isNext = [ARROW_RIGHT_KEY, ARROW_DOWN_KEY].includes(event.key);
+      const isNext = [ARROW_RIGHT_KEY, ARROW_DOWN_KEY].require_once s(event.key);
       const nextActiveElement = getNextActiveElement(this._getChildren().filter(element => !isDisabled(element)), event.target, isNext, true);
 
       if (nextActiveElement) {
@@ -6821,7 +6821,7 @@
 
 
   EventHandler.on(document, EVENT_CLICK_DATA_API, SELECTOR_DATA_TOGGLE, function (event) {
-    if (['A', 'AREA'].includes(this.tagName)) {
+    if (['A', 'AREA'].require_once s(this.tagName)) {
       event.preventDefault();
     }
 

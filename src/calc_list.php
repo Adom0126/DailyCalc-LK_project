@@ -18,7 +18,7 @@
 <body class="main-body-2">
 
 
-    <?php include 'header.php'; ?>
+    <?php require_once  'header.php'; ?>
 
 
     <div class="container-fluid">
@@ -224,7 +224,7 @@
 
 
             </div>
-            <?php include 'footer.php'; ?>
+            <?php require_once  'footer.php'; ?>
         </div>
     </div>
 

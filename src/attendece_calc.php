@@ -19,7 +19,7 @@
 <body class="main-body-2">
 
     <div class="container-fluid">
-        <?php include 'header.php'; ?>
+        <?php require_once 'header.php'; ?>
         <div class="row">
             <div class="col-12 py-3 p-3">
                 <h2 class="mt-4 text-center m-auto fs-1">Attendance Percentage Calculator</h2>
@@ -53,7 +53,7 @@
                 </div>
             </div>
         </div>
-        <?php include 'footer.php'; ?>
+        <?php require_once 'footer.php'; ?>
     </div>
 
 
