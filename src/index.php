@@ -22,7 +22,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-12">
-                <?php require "header.php"; ?>
+                <?php require_once "header.php"; ?>
                 <!-- Section 1 Start  -->
 
                 <div class="row">
@@ -200,7 +200,7 @@
                             <div class="col-10  m-auto text-center justify-content-center d-flex gap-5 flex-wrap">
                                 <div class="row">
                                     <div class="col-12 col-md-4 mb-4">
-                                        <div class="card c-1" >
+                                        <div class="card c-1">
                                             <img src="resourses/1.png" class="card-img-top" alt="...">
                                             <div class="card-body">
                                                 <p class="card-text text_1">Financial calculator made for <br /> the needs of Sri Lanka users.</p>
@@ -208,7 +208,7 @@
                                         </div>
                                     </div>
                                     <div class="col-12 col-md-4 mb-4">
-                                        <div class="card c-1" >
+                                        <div class="card c-1">
                                             <img src="resourses/2.png" class="card-img-top" alt="...">
                                             <div class="card-body">
                                                 <p class="card-text text_1">Always updated with the latest <br /> Lankan Tax laws and rates.</p>
@@ -216,7 +216,7 @@
                                         </div>
                                     </div>
                                     <div class="col-12 col-md-4 mb-4">
-                                        <div class="card c-1" >
+                                        <div class="card c-1">
                                             <img src="resourses/3.png" class="card-img-top" alt="...">
                                             <div class="card-body">
                                                 <p class="card-text text_1">Simple interface, perfect for everyone </br> from students to professionals.</p>
@@ -232,32 +232,12 @@
                     </div>
                 </div>
 
-                <!-- section 3 End -->
-
-                <!-- <div class="row">
-                    <div class="col-12 section_2 py-3 p-3">
-                        <div class="row">
-                            <div class="col-6 m-auto mb-3"><img src="resourses/second_img.png" class="image_2 d-none d-md-block" alt="Calculator"> </div>
-                            <div class="col-6 mt-5 text-center m-auto">
-                                <h1 class="title_02">Why Choose DailyCalc LK?</h1>
-                                <ul class="fs-4 text-start">
-                                    <li>Localized for Sri Lankan Users: Tailored to meet the unique financial needs of Sri Lanka.</li>
-                                    <li>User-Friendly Interface: Intuitive design for easy navigation and quick calculations.</li>
-                                    <li>Comprehensive Financial Tools: Wide range of calculators for budgeting, loans, investments, and more.</li>
-                                    <li>Accurate and Reliable: Trusted by users for precise financial calculations.</li>
-                                    <li>Free to Use: Access essential financial tools without any cost.</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
-
-
+                
 
                 <br>
 
-                
-                <?php require "footer.php"; ?>
+
+                <?php require_once "footer.php"; ?>
             </div>
         </div>
     </div>
