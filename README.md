@@ -20,7 +20,6 @@ https://dailycalc-lk-devops.onrender.com/
 - Bootstrap 5  
 - PHP  
 - GitHub Actions (CI/CD)  
-- InfinityFree / Wuaze (Deployment Platform)  
 
 
 ## Features 
